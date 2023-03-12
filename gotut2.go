@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -69,4 +70,32 @@ func main() {
 	// fmt.Printf("%9.f\n", 3.141592)
 	// sp1 := fmt.Sprintf("%9.f\n", 3.141592)
 	// pl(sp1)
+
+	// Receive customer data (Their age)
+	// What is your age
+	fmt.Print("What is your age? ")
+	reader := bufio.NewReader(os.Stdin)
+	input, err := reader.ReadString('\n')
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// trim whitespace from input
+	age, err := strconv.Atoi(strings.TrimSpace(input))
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		fmt.Println("You are:", age, "years old")
+	}
+
+	if age < 5 {
+		pl("Too young for school")
+	} else if age == 5 {
+		pl("Go to Kindergarten")
+	} else if age > 5 && age <= 17 {
+		fmt.Printf("Go to grade %d", age-5)
+		fmt.Println()
+	} else {
+		pl("Go to college")
+	}
 }
