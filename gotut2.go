@@ -1,12 +1,7 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"log"
-	"os"
-	"strconv"
-	"strings"
 )
 
 var pl = fmt.Println
@@ -71,31 +66,66 @@ func main() {
 	// sp1 := fmt.Sprintf("%9.f\n", 3.141592)
 	// pl(sp1)
 
-	// Receive customer data (Their age)
-	// What is your age
-	fmt.Print("What is your age? ")
-	reader := bufio.NewReader(os.Stdin)
-	input, err := reader.ReadString('\n')
-	if err != nil {
-		log.Fatal(err)
-	}
+	// // Receive customer data (Their age)
+	// // What is your age
+	// fmt.Print("What is your age? ")
+	// reader := bufio.NewReader(os.Stdin)
+	// input, err := reader.ReadString('\n')
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
-	// trim whitespace from input
-	age, err := strconv.Atoi(strings.TrimSpace(input))
-	if err != nil {
-		log.Fatal(err)
-	} else {
-		fmt.Println("You are:", age, "years old")
-	}
+	// // trim whitespace from input
+	// age, err := strconv.Atoi(strings.TrimSpace(input))
+	// if err != nil {
+	// 	log.Fatal(err)
+	// } else {
+	// 	fmt.Println("You are:", age, "years old")
+	// }
 
-	if age < 5 {
-		pl("Too young for school")
-	} else if age == 5 {
-		pl("Go to Kindergarten")
-	} else if age > 5 && age <= 17 {
-		fmt.Printf("Go to grade %d", age-5)
-		fmt.Println()
-	} else {
-		pl("Go to college")
-	}
+	// if age < 5 {
+	// 	pl("Too young for school")
+	// } else if age == 5 {
+	// 	pl("Go to Kindergarten")
+	// } else if age > 5 && age <= 17 {
+	// 	fmt.Printf("Go to grade %d", age-5)
+	// 	fmt.Println()
+	// } else {
+	// 	pl("Go to college")
+	// }
+
+	// // Math
+	// pl("5 + 4 =", 5+4)
+	// pl("5 - 4 =", 5-4)
+	// pl("5 * 4 =", 5*4)
+	// pl("5 / 4 =", 5/4)
+	// pl("5 % 4 =", 5%4)
+	// mInt := 1
+	// mInt += 1
+	// mInt = mInt + 1
+
+	// pl("Float Precision =", 0.1111111111111111+0.1111111111111111)
+
+	// seedSecs := time.Now().Unix()
+	// rand.Seed(seedSecs)
+	// randNum := rand.Intn(50) + 1
+	// pl("Random:=", randNum)
+
+	// pl("Abs(-10) = ", math.Abs(-10))
+	// pl("Pow(4, 2) = ", math.Pow(4, 2))
+	// pl("Sqrt(16) = ", math.Sqrt(16))
+	// pl("Cbrt(8) = ", math.Cbrt(8))
+	// pl("Ceil(4.4) = ", math.Ceil(4.4))
+	// pl("Floor(4.4) = ", math.Floor(4.4))
+	// pl("Round(4.4) = ", math.Round(4.4))
+	// pl("Log2(8) = ", math.Log2(8))
+	// pl("Log10(100) = ", math.Log10(100))
+	// pl("Log(7.389) = ", math.Log(7.389))
+	// pl("Max(5, 4) = ", math.Max(5, 4))
+	// pl("Min(5,4) = ", math.Min(5, 4))
+
+	// r90 := 90 * math.Pi / 180
+	// d90 := r90 * (180 / math.Pi)
+	// fmt.Printf("%f radians = %f degrees\n", r90, d90)
+	// pl("Sin(90) =", math.Sin(r90))
 }
