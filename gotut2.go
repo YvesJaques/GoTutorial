@@ -128,4 +128,36 @@ func main() {
 	// d90 := r90 * (180 / math.Pi)
 	// fmt.Printf("%f radians = %f degrees\n", r90, d90)
 	// pl("Sin(90) =", math.Sin(r90))
+
+	// fmt.Print("Enter number 1:")
+	// reader := bufio.NewReader(os.Stdin)
+	// number1Input, err := reader.ReadString('\n')
+
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+
+	// number1Input = strings.TrimSpace(number1Input)
+	// number1, err := strconv.Atoi(number1Input)
+
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+
+	// fmt.Print("Enter number 2:")
+	// reader = bufio.NewReader(os.Stdin)
+	// number2Input, err := reader.ReadString('\n')
+
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+
+	// number2Input = strings.TrimSpace(number2Input)
+	// number2, err := strconv.Atoi(number2Input)
+
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+
+	// fmt.Printf("%d + %d = %d\n", number1, number2, number1+number2)
 }
