@@ -160,4 +160,30 @@ func main() {
 	// }
 
 	// fmt.Printf("%d + %d = %d\n", number1, number2, number1+number2)
+
+	// //x exists only in for loop scope
+	// for x := 1; x <= 5; x++ {
+	// 	pl(x)
+	// }
+
+	// //while loop
+	// fx := 0
+	// for fx < 5 {
+	// 	pl(fx)
+	// 	fx++
+	// }
+
+	// aNums := []int{1, 2, 3}
+	// for _, num := range aNums {
+	// 	pl(num)
+	// }
+
+	// xVal := 1
+	// for true {
+	// 	if xVal == 5 {
+	// 		break
+	// 	}
+	// 	pl(xVal)
+	// 	xVal++
+	// }
 }
