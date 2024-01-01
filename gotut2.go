@@ -1,7 +1,14 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"log"
+	"math/rand"
+	"os"
+	"strconv"
+	"strings"
+	"time"
 )
 
 var pl = fmt.Println
@@ -186,4 +193,35 @@ func main() {
 	// 	pl(xVal)
 	// 	xVal++
 	// }
+
+	// // Looping exercise - Guess a number
+	max := 50
+	seedSecs := time.Now().Unix()
+	rand.Seed(seedSecs)
+	randNum := rand.Intn(max) + 1
+
+	fmt.Printf("Guess a number between 0 and %d:", max)
+	for true {
+		reader := bufio.NewReader(os.Stdin)
+		guessInput, err := reader.ReadString('\n')
+
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		guessInput = strings.TrimSpace(guessInput)
+		guess, err := strconv.Atoi(guessInput)
+		if err != nil {
+			log.Fatal(err)
+		}
+		if guess == randNum {
+			pl("You got it!")
+			break
+		} else if guess < randNum {
+			pl("Guess a higher number")
+		} else {
+			pl("Guess a lower number")
+		}
+	}
+
 }
