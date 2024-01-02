@@ -328,4 +328,76 @@ func main() {
 	// pl("sl4 :", sl4)
 	// pl("sl4[0] :", sl4[0])
 
+	// // Functions
+	// sayHello()
+
+	// pl(getSum(5, 4))
+
+	// ans, err := getQuotient(5, 0)
+	// if err == nil {
+	// 	fmt.Printf("%f / %f= %f", 5.0, 0.0, ans)
+	// } else {
+	// 	pl(err)
+	// }
+
+	// ans, err = getQuotient(5, 4)
+	// if err == nil {
+	// 	fmt.Printf("%.2f / %.2f= %.2f\n", 5.0, 0.0, ans)
+	// } else {
+	// 	pl(err)
+	// }
+
+	// f1, f2 := getTwo(5)
+	// fmt.Printf("%d %d\n", f1, f2)
+
+	// pl("Unknown Sum: ", getSum2(1, 2, 3, 4))
+
+	// vArr := []int{1, 2, 3, 4}
+	// pl("Array Sum: ", getArraySum(vArr))
+
+	// f3 := 5
+	// pl("f3 before func:", f3)
+	// changeVal(f3)
+	// pl("f3 after func:", f3)
+
 }
+
+// func sayHello() {
+// 	pl("Hello")
+// }
+
+// func getSum(x int, y int) int {
+// 	return x + y
+// }
+
+// func getQuotient(x float64, y float64) (ans float64, err error) {
+// 	if y == 0 {
+// 		return 0, errors.New("Cannot divide by zero")
+// 	}
+// 	return x / y, nil
+// }
+
+// func getTwo(x int) (int, int) {
+// 	return x + 1, x + 2
+// }
+
+// func getSum2(nums ...int) int {
+// 	sum := 0
+// 	for _, v := range nums {
+// 		sum += v
+// 	}
+// 	return sum
+// }
+
+// func getArraySum(arr []int) int {
+// 	sum := 0
+// 	for _, num := range arr {
+// 		sum += num
+// 	}
+// 	return sum
+// }
+
+// func changeVal(f3 int) int {
+// 	f3 += 1
+// 	return f3
+// }
