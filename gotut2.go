@@ -1,14 +1,7 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"log"
-	"math/rand"
-	"os"
-	"strconv"
-	"strings"
-	"time"
 )
 
 var pl = fmt.Println
@@ -195,33 +188,57 @@ func main() {
 	// }
 
 	// // Looping exercise - Guess a number
-	max := 50
-	seedSecs := time.Now().Unix()
-	rand.Seed(seedSecs)
-	randNum := rand.Intn(max) + 1
+	// max := 50
+	// seedSecs := time.Now().Unix()
+	// rand.Seed(seedSecs)
+	// randNum := rand.Intn(max) + 1
 
-	fmt.Printf("Guess a number between 0 and %d:", max)
-	for true {
-		reader := bufio.NewReader(os.Stdin)
-		guessInput, err := reader.ReadString('\n')
+	// fmt.Printf("Guess a number between 0 and %d:", max)
+	// for true {
+	// 	reader := bufio.NewReader(os.Stdin)
+	// 	guessInput, err := reader.ReadString('\n')
 
-		if err != nil {
-			log.Fatal(err)
-		}
+	// 	if err != nil {
+	// 		log.Fatal(err)
+	// 	}
 
-		guessInput = strings.TrimSpace(guessInput)
-		guess, err := strconv.Atoi(guessInput)
-		if err != nil {
-			log.Fatal(err)
-		}
-		if guess == randNum {
-			pl("You got it!")
-			break
-		} else if guess < randNum {
-			pl("Guess a higher number")
-		} else {
-			pl("Guess a lower number")
-		}
-	}
+	// 	guessInput = strings.TrimSpace(guessInput)
+	// 	guess, err := strconv.Atoi(guessInput)
+	// 	if err != nil {
+	// 		log.Fatal(err)
+	// 	}
+	// 	if guess == randNum {
+	// 		pl("You got it!")
+	// 		break
+	// 	} else if guess < randNum {
+	// 		pl("Guess a higher number")
+	// 	} else {
+	// 		pl("Guess a lower number")
+	// 	}
+	// }
+
+	// // Strings & Runes
+	// sV1 := "A word"
+	// replacer := strings.NewReplacer("A", "Another")
+	// sV2 := replacer.Replace(sV1)
+	// pl(sV2)
+
+	// pl("Length:", len(sV2))
+	// pl("Contains Another:", strings.Contains(sV2, "Another"))
+	// pl("o index:", strings.Index(sV2, "o"))
+	// pl("Replace:", strings.Replace(sV2, "o", "0", -1))
+	// sV3 := "\nSome Words \n"
+	// sV3 = strings.TrimSpace(sV3)
+	// pl("Split:", strings.Split("a-b-c-d", "-"))
+	// pl("Lower:", strings.ToLower(sV3))
+	// pl("Upper:", strings.ToUpper(sV3))
+	// pl("HasPrefix:", strings.HasPrefix("tacocat", "taco"))
+	// pl("HasSuffix:", strings.HasSuffix("tacocat", "cat"))
+
+	// rStr := "abcdefg"
+	// pl("Rune Count:", utf8.RuneCountInString((rStr)))
+	// for i, runeVal := range rStr {
+	// 	fmt.Printf("%d : %#U : %c\n", i, runeVal, runeVal)
+	// }
 
 }
