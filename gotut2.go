@@ -265,4 +265,33 @@ func main() {
 	// fmt.Printf("Days Alive: %d days\n", int(diff.Hours()/24))
 	// fmt.Printf("Hours Alive: %d hours\n", int(diff.Hours()))
 
+	// // Arrays
+	// var arr1 [5]int
+	// arr1[0] = 1
+	// arr2 := [5]int{1, 2, 3, 4, 5}
+	// pl("Index 0:", arr2[0])
+	// pl("Array Length:", len(arr2))
+	// for i := 0; i < len(arr2); i++ {
+	// 	pl(arr2[i])
+	// }
+
+	// for i, v := range arr2 {
+	// 	fmt.Printf("Index: %d, Value: %d\n", i, v)
+	// }
+
+	// arr3 := [2][2]int{{1, 2}, {3, 4}}
+	// for i := 0; i < len(arr3); i++ {
+	// 	for j := 0; j < len(arr3[i]); j++ {
+	// 		pl(arr3[i][j])
+	// 	}
+	// }
+
+	// aStr1 := "abcde"
+	// rArr := []rune(aStr1)
+	// for _, v := range rArr {
+	// 	fmt.Printf("Rune Array %d\n", v)
+	// }
+	// byteArr := []byte{'a', 'b', 'c'}
+	// bStr := string(byteArr[:])
+	// pl("I'm a string:", bStr)
 }
