@@ -130,8 +130,12 @@ func main() {
 
 }
 
-func showGameBoard() {
+func showHangman() {
 	pl(hmArr[len(wrongGuesses)])
+}
+
+func showGameBoard() {
+	showHangman()
 	fmt.Print("Secret Word :")
 	for _, letter := range randWord {
 		if strings.Contains(guessedLetters, string(letter)) {
@@ -169,7 +173,8 @@ func checkVictory() bool {
 }
 
 func checkDefeat() {
-	if len(wrongGuesses) == len(hmArr) {
+	if len(wrongGuesses) == len(hmArr)-1 {
+		showHangman()
 		pl("Sorry you're Dead! The word is " + randWord)
 		os.Exit(0)
 	}
