@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"log"
+	"math/rand"
 	"os"
 	"strings"
 )
@@ -80,7 +81,8 @@ var wrongGuesses []string
 var alphabet = "aAbBcCçÇdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
 
 func main() {
-	randWord = wordArr[0]
+	randNum := rand.Intn(len(wordArr))
+	randWord = wordArr[randNum]
 
 	for true {
 		// Show Game Board
