@@ -99,17 +99,23 @@ func main() {
 			continue
 		}
 
+		if strings.Contains(guessedLetters, guess) {
+			pl("Please Enter a Letter you Haven't Guessed\n")
+			continue
+		}
+
 		// A. If the letter is in the word
 		if strings.Contains(randWord, guess) {
 			correctLetters = append(correctLetters, guess)
-			guessedLetters += guess
-			pl("Correct Letter")
+			pl("Correct Letter\n")
 		} else {
 			// B. If the letter is NOT in the word
 			// 1. Add new letter to wrongGuesses
 			wrongGuesses = append(wrongGuesses, guess)
 		}
-		// 1. Are there more letters to guess?
+		guessedLetters += guess
+
+		// 1. Are there more chances?
 		// 2. If no more letters to guess (YOU WIN)
 		if checkVictory() {
 			pl("Yes the Secret Word is " + randWord)
