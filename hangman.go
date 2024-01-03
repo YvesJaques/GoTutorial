@@ -8,6 +8,7 @@ import (
 	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 var pl = fmt.Println
@@ -81,7 +82,9 @@ var wrongGuesses []string
 var alphabet = "aAbBcCçÇdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
 
 func main() {
-	randNum := rand.Intn(len(wordArr))
+	seedSecs := time.Now().Unix()
+	random := rand.New(rand.NewSource(seedSecs))
+	randNum := random.Intn(len(wordArr))
 	randWord = wordArr[randNum]
 
 	for true {
