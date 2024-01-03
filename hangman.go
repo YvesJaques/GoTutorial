@@ -39,34 +39,34 @@ var hmArr = [7]string{
 		"     |\n" +
 		"    ===\n",
 	" +---+\n" +
-		"	0   |\n" +
+		" 0   |\n" +
 		"     |\n" +
 		"     |\n" +
 		"    ===\n",
 	" +---+\n" +
-		"	0   |\n" +
+		" 0   |\n" +
 		" |   |\n" +
 		"     |\n" +
 		"    ===\n",
 	" +---+\n" +
-		"	0   |\n" +
+		" 0   |\n" +
 		"/|   |\n" +
 		"     |\n" +
 		"    ===\n",
 	" +---+\n" +
-		"	0   |\n" +
-		"/|\\ |\n" +
+		" 0   |\n" +
+		"/|\\  |\n" +
 		"     |\n" +
 		"    ===\n",
 	" +---+\n" +
-		"	0   |\n" +
-		"/|\\ |\n" +
+		" 0   |\n" +
+		"/|\\  |\n" +
 		"/    |\n" +
 		"    ===\n",
 	" +---+\n" +
-		"	0   |\n" +
-		"/|\\ |\n" +
-		"/ \\ |\n" +
+		" 0   |\n" +
+		"/|\\  |\n" +
+		"/ \\  |\n" +
 		"    ===\n",
 }
 
@@ -104,6 +104,10 @@ func main() {
 			correctLetters = append(correctLetters, guess)
 			guessedLetters += guess
 			pl("Correct Letter")
+		} else {
+			// B. If the letter is NOT in the word
+			// 1. Add new letter to wrongGuesses
+			wrongGuesses = append(wrongGuesses, guess)
 		}
 		// 1. Are there more letters to guess?
 		// 2. If no more letters to guess (YOU WIN)
@@ -111,10 +115,9 @@ func main() {
 			pl("Yes the Secret Word is " + randWord)
 			return
 		}
-		// B. If the letter is NOT in the word
-		// 1. Add new letter to guessedLetters
-		// wrongGuesses
+
 		// 2. If no more chances (YOU LOSE)
+		checkDefeat()
 	}
 
 }
@@ -155,4 +158,11 @@ func checkVictory() bool {
 		}
 	}
 	return true
+}
+
+func checkDefeat() {
+	if len(wrongGuesses) == len(hmArr) {
+		pl("Sorry you're Dead! The word is " + randWord)
+		os.Exit(0)
+	}
 }
