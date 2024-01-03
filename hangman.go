@@ -147,6 +147,7 @@ func showGameBoard() {
 			fmt.Print("_")
 		}
 	}
+	pl("\nWrong guesses:", wrongGuesses)
 	pl()
 }
 
