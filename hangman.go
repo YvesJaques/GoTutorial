@@ -145,7 +145,7 @@ func validateGuess(guess string) (letter string, err error) {
 		return "", errors.New("You should enter a letter")
 	}
 
-	return guess, nil
+	return strings.ToUpper(guess), nil
 }
 
 func checkVictory() bool {
