@@ -106,8 +106,11 @@ func main() {
 			pl("Correct Letter")
 		}
 		// 1. Are there more letters to guess?
-
 		// 2. If no more letters to guess (YOU WIN)
+		if checkVictory() {
+			pl("Yes the Secret Word is " + randWord)
+			return
+		}
 		// B. If the letter is NOT in the word
 		// 1. Add new letter to guessedLetters
 		// wrongGuesses
@@ -143,4 +146,13 @@ func validateGuess(guess string) (letter string, err error) {
 	}
 
 	return guess, nil
+}
+
+func checkVictory() bool {
+	for _, letter := range randWord {
+		if !strings.Contains(guessedLetters, string(letter)) {
+			return false
+		}
+	}
+	return true
 }
