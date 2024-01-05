@@ -37,12 +37,21 @@ func getEmptySpace(puzz [][]int) (int, int) {
 	return -1, -1 // No empty spaces on the grid
 }
 
+// check values on row
 func isNumValid(puzz [][]int, guess int, row int, column int) bool {
 	for index := range puzz {
 		if puzz[row][index] == guess && column != index {
 			return false
 		}
 	}
+
+	// check values on column
+	for index := range puzz {
+		if puzz[index][column] == guess && column != index {
+			return false
+		}
+	}
+
 	return true
 }
 
@@ -68,5 +77,9 @@ func main() {
 		return
 	}
 
+	fmt.Println(isNumValid(puzz, 1, 0, 0))
 	fmt.Println(isNumValid(puzz, 7, 0, 0))
+	fmt.Println(isNumValid(puzz, 6, 0, 0))
+	fmt.Println(isNumValid(puzz, 9, 0, 0))
+
 }
