@@ -52,6 +52,27 @@ func isNumValid(puzz [][]int, guess int, row int, column int) bool {
 		}
 	}
 
+	//Is number valid for box?
+	//Row 0 & column 3
+	//Row - (Row % 3) + Value for cycling(0-2)
+	// 0 - (0 % 3) + 0 = 0 - 0 + 0 = 0 (1st row in box)
+	// 0 - (0 % 3) + 1 = 0 - 0 + 1 = 1 (1st row in box)
+	// 0 - (0 % 3) + 2 = 0 - 0 + 2 = 2 (1st row in box)
+
+	//Col - (Col % 3) + Value for cycling(0-2)
+	// 3 - (3 % 3) + 0 = 3 - 0 + 0 = 3 (1st col in box)
+	// 3 - (3 % 3) + 1 = 3 - 0 + 1 = 4 (1st col in box)
+	// 3 - (3 % 3) + 2 = 3 - 0 + 2 = 5 (1st col in box)
+
+	for k := 0; k < 3; k++ {
+		for l := 0; l < 3; l++ {
+			if puzz[row-row%3+k][column-column%3+l] ==
+				guess && (row-row%3+k != row || column-column%3+l != column) {
+				return false
+			}
+		}
+	}
+
 	return true
 }
 
@@ -82,4 +103,6 @@ func main() {
 	fmt.Println(isNumValid(puzz, 6, 0, 0))
 	fmt.Println(isNumValid(puzz, 9, 0, 0))
 
+	fmt.Println(isNumValid(puzz, 7, 4, 0))
+	fmt.Println(isNumValid(puzz, 1, 0, 6))
 }
